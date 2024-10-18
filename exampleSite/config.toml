@@ -8,7 +8,7 @@ disableKinds = ["page", "section", "taxonomy", "term", "RSS", "sitemap"]
 
 baseURL = "https://example.com/"
 title = "Example - CV"
-#googleAnalytics = ""
+googleAnalytics = false
 
 [params]
 enableMetaTags = true
