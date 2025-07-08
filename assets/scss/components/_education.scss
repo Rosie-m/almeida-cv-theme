@@ -1,5 +1,35 @@
 .education {
-    &__item {
-        @include avoid-break;
+  &__item {
+    display: block;
+    position: relative;
+    @include avoid-break;
+    &:not(:first-child) {
+      padding-top: 8px;
     }
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // space between icon and text
+    margin-bottom: 3px;
+  }
+
+  &__icon {
+    font-size: 1rem;
+    color: $color-primary; // optional
+  }
+
+  &__details {
+    padding-left: 1.8rem; // indent for details
+    position: relative;
+    transition: transform 0.2s cubic-bezier($cubic);
+    margin-bottom: 5px;
+
+    // &:hover {
+    //   transform: translateX(0.5rem);
+    // }
+  }
 }

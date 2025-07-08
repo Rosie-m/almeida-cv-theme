@@ -1,0 +1,67 @@
+.publication {
+  &__item {
+    display: block;
+    position: relative;
+    @include avoid-break;
+    &:not(:first-child) {
+      padding-top: 1.5rem;
+    }
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    // &::before {
+    //   content: "";
+    //   height: 90%;
+    //   width: 1.5px;
+    //   position: absolute;
+    //   background: linear-gradient(
+    //     $color-page-background,
+    //     rgba(255, 255, 255, 0)
+    //   );
+    //   //background: linear-gradient(blue, red);
+    //   margin-top: 25px;
+    // }
+  }
+
+  &__details {
+    position: relative;
+    transition: transform 0.2s cubic-bezier($cubic);
+    margin-bottom: 1rem;
+  }
+
+  &__links {
+    button {
+      display: inline-block;
+      padding: 0.4rem 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: $color-primary;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: darken($color-primary, 10%);
+        transform: translateY(-1px);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+}
+
+.highlight {
+  font-weight: 800 !important;
+  color: #1a1a1a; /* optional, for clarity */
+}

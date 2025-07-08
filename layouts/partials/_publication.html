@@ -1,0 +1,29 @@
+{{ if .Publication }}
+  <div id="publication" class="section">
+    <div class="section__heading">
+      <h2 class="section__title">{{ i18n "publication" }}</h2>
+    </div>
+    <div class="section__content">
+      <div class="publication">
+        {{ range .Publication }}
+          {{ if .Class }}
+            <div class="publication__item {{ .Class }}">
+          {{ else }}
+            <div class="publication__item">
+          {{ end }}
+              <h3 class="publication__title">{{ .Title | safeHTML }}</h3>
+              <p class="publication__conference">{{ .Conference | safeHTML }}</p>
+              <p class="publication__authors">{{ .Authors | safeHTML }}</p>
+              {{ if .Links }}
+                <div class="publication__links">
+                  {{ range .Links }}
+                    <button onclick="window.open('{{ .Link }}', '_blank')" rel="noopener noreferrer">{{ .Text }}</button>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div> <!-- closes .publication__item -->
+        {{ end }}
+      </div> <!-- closes .publication -->
+    </div> <!-- closes .section__content -->
+  </div> <!-- closes #publication -->
+{{ end }}
